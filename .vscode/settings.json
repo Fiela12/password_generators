@@ -2,15 +2,23 @@
   // Disable inline (ghost) suggestions everywhere in this workspace
   "editor.inlineSuggest.enabled": false,
 
-  // Show suggestion popups only when typing inside comments (not in code or strings)
+  // Show suggestion popups when typing in code and in comments (so built-in IntelliSense works),
+  // but keep Copilot's inline completions disabled. This keeps helpful signature help, completions
+  // from the language server and your own functions, while avoiding AI-written code being inserted.
   "editor.quickSuggestions": {
-    "other": false,
+    "other": true,
     "comments": true,
     "strings": false
   },
 
-  // Don't trigger suggestions on characters like dot automatically
-  "editor.suggestOnTriggerCharacters": false,
+  // Trigger suggestions on characters like dot (so property/method completions appear naturally)
+  "editor.suggestOnTriggerCharacters": true,
+
+  // Keep parameter/signature hints on so you see function signatures while calling your functions
+  "editor.parameterHints.enabled": true,
+
+  // Allow snippets to appear and not block quick suggestions
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
 
   // Keep GitHub Copilot enabled for the workspace so you can invoke it manually,
   // but disable Copilot's inline suggestions so it doesn't intrude into code.
