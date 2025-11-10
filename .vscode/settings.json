@@ -1,10 +1,20 @@
 {
-  // Disable inline suggestions in the editor for this workspace
+  // Disable inline (ghost) suggestions everywhere in this workspace
   "editor.inlineSuggest.enabled": false,
 
-  // Disable GitHub Copilot features for this workspace (best-effort — extension setting keys vary by version)
-  // Use an object for the `github.copilot.enable` setting so VS Code accepts the type
-  "github.copilot.enable": { "workspace": false },
+  // Show suggestion popups only when typing inside comments (not in code or strings)
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": true,
+    "strings": false
+  },
+
+  // Don't trigger suggestions on characters like dot automatically
+  "editor.suggestOnTriggerCharacters": false,
+
+  // Keep GitHub Copilot enabled for the workspace so you can invoke it manually,
+  // but disable Copilot's inline suggestions so it doesn't intrude into code.
+  "github.copilot.enable": { "workspace": true },
   "github.copilot.inlineSuggest.enable": false,
   "github.copilot.chat.enable": false
 }
