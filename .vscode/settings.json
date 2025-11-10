@@ -1,0 +1,10 @@
+{
+  // Disable inline suggestions in the editor for this workspace
+  "editor.inlineSuggest.enabled": false,
+
+  // Disable GitHub Copilot features for this workspace (best-effort — extension setting keys vary by version)
+  // Use an object for the `github.copilot.enable` setting so VS Code accepts the type
+  "github.copilot.enable": { "workspace": false },
+  "github.copilot.inlineSuggest.enable": false,
+  "github.copilot.chat.enable": false
+}
